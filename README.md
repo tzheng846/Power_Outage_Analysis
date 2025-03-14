@@ -41,3 +41,4 @@ outage['DAY.OR.NIGHT'] = outage['OUTAGE.START.TIME'].apply(
 )
 outage['HAS.HURRICANE'] = outage['HURRICANE.NAMES'].notna()
 outage = outage.drop('HURRICANE.NAMES', axis=1)
+px.histogram(outage, x='POPULATION', title='Population Distribution')
