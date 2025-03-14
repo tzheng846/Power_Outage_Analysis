@@ -12,7 +12,7 @@ https://tzheng846.github.io/Power_Outage_Analysis/
 We aim to answer: **What are the characteristics of different levels of outage duration?**
 
 ---
-
+ 
 ## 1.2 Step 2: Data Cleaning and EDA
 
 ### 1.2.1 Data Cleaning
