@@ -8,7 +8,7 @@ https://tzheng846.github.io/Power_Outage_Analysis/
 
 ---
 
-## 1.1 Step 1: Introduction
+## Introduction
 We aim to answer: **What are the characteristics of different levels of outage duration?**
 
 ---
@@ -42,3 +42,4 @@ outage['DAY.OR.NIGHT'] = outage['OUTAGE.START.TIME'].apply(
 outage['HAS.HURRICANE'] = outage['HURRICANE.NAMES'].notna()
 outage = outage.drop('HURRICANE.NAMES', axis=1)
 px.histogram(outage, x='POPULATION', title='Population Distribution')
+```
