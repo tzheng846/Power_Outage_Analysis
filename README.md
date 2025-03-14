@@ -10,13 +10,11 @@ author: Yi-Hsuan Kuo & Tony Zheng
 ---
 
 ## Introduction
-<<<<<<< HEAD
 We aim to answer: **What are the characteristics of different levels of outage duration?**
 
 ---
  
 ## 1.2 Step 2: Data Cleaning and EDA
-=======
 ![Power grid](assets/grid.jpg){: width="400"}  
 Electricity outages impact millions annually. We analyzed 10 years of outage data to answer:  
 🔍 **What factors make some outages last longer than others?**  
@@ -29,10 +27,8 @@ Our findings help utilities prioritize response efforts and improve infrastructu
 - Removed 12% incomplete duration records
 - Classified outage start times as **Day (9AM-5PM)** or **Night**
 - Created hurricane flag from storm name records
->>>>>>> f21472378859ff9ceea6de1f21b2e7204a6430d8
 
 ```python
-<<<<<<< HEAD
 # Load data and select relevant columns
 original = pd.read_csv('data/power_outage.csv')
 outage = original[['YEAR', 'MONTH', 'U.S._STATE', 'NERC.REGION', 'CLIMATE.REGION', 
@@ -59,7 +55,3 @@ outage['HAS.HURRICANE'] = outage['HURRICANE.NAMES'].notna()
 outage = outage.drop('HURRICANE.NAMES', axis=1)
 px.histogram(outage, x='POPULATION', title='Population Distribution')
 ```
-=======
-# Sample cleaned data
-print(outage[['STATE', 'DURATION', 'CAUSE']].head().to_markdown())
->>>>>>> f21472378859ff9ceea6de1f21b2e7204a6430d8
