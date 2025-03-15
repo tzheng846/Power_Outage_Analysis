@@ -63,7 +63,7 @@ These cleaning steps ensured that our dataset was free of missing values in crit
 
 ## Exploratory analysis
 ### Univariate Analysis
-population vs count: 
+population vs count:  
 The following shows the number of outages for each population range. We see that it's multimodal with concentration at 5M, 20M, and 35-40M. This hints that most outages occurs in areas with low population. This would make sense since smaller citites might not have the proper outage protection. 
 
 <iframe
@@ -73,7 +73,7 @@ The following shows the number of outages for each population range. We see that
   frameborder="0"
 ></iframe>
 
-climate vs count:
+climate vs count:  
 The following shows the three catagory of climate and the number of occurance of outages. We see that most outages occurs in normal, with cold climate being second. This makes sense since most of US is catagorized as 'normal' climate, therefore will have more instances of outages. 
 
 <iframe
@@ -83,7 +83,7 @@ The following shows the three catagory of climate and the number of occurance of
   frameborder="0"
 ></iframe>
 
-Duration level vs count:
+Duration level vs count:  
 The following chart shows the number of occurance of outages for each duration level. Note that the catagories are not in order of duration. We see that most outages are momentary and short termed. 
 
 <iframe
@@ -93,7 +93,7 @@ The following chart shows the number of occurance of outages for each duration l
   frameborder="0"
 ></iframe>
 
-Year vs Outage Duration:
+Year vs Outage Duration:  
 The following chart shows that there is a general downward trend since 2002 to 2016 of outage duration, despite each year varying wildly. 
 
 <iframe
@@ -105,7 +105,7 @@ The following chart shows that there is a general downward trend since 2002 to 2
 
 ### Bivariate Analysis
 
-Outage Duration vs Population:
+Outage Duration vs Population:  
 The following chart shows the distribution of population in comaparison to outage duration. Similar to the previous outage count chart, we see high concentration in three areas: namely 0-13M, 17-27M, and 35-40M range. 
 
 <iframe
@@ -114,8 +114,8 @@ The following chart shows the distribution of population in comaparison to outag
   height="600"
   frameborder="0"
 ></iframe>
-
-Anomoly level vs climate category:
+ 
+Anomoly level vs climate category:  
 The following chart comares the number of occurance of outages for each climate category and anomoly level
 
 <iframe
@@ -125,7 +125,7 @@ The following chart comares the number of occurance of outages for each climate 
   frameborder="0"
 ></iframe>
 
-Heatmap
+Heatmap:  
 The following chart compares climate categroy with cause category and the difference in number of occurances. We see severe weather has the most effect to outage, as well as intentional attacks. The others have not much effects. 
 
 <iframe
@@ -135,7 +135,7 @@ The following chart compares climate categroy with cause category and the differ
   frameborder="0"
 ></iframe>
 
-State vs anomaly level
+State vs anomaly level:  
 The following chart shows the max anomaly level of each state. Note all states are not shown on bottom. Hover over bars to see more details. We see that Kansas and South Dakota are significantly higher than the rest. 
 
 <iframe
