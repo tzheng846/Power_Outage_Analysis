@@ -171,7 +171,7 @@ The observed TVD is around 0.4099 with the p-values of 0.256, which is higher th
 - Null Hypothesis: The distribution of 'CLIMATE.CATEGORY' is the same when 'TOTAL.PRICE' is missing vs not missing.
 - Alternate Hypothesis: The distribution of ''CLIMATE.CATEGORY' is not the same when 'TOTAL.PRICE' is missing vs not missing.
 <iframe
-  src="project04/asset/prop-climCatagoryE.html"
+  src="project04/asset/prop-climCatagory.html"
   width="800"
   height="600"
   frameborder="0"
