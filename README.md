@@ -188,7 +188,7 @@ The observed TVD is around 0.4099 with the p-values of 0.256, which is higher th
 ></iframe>
 The observed TVD is around 0.0164 with the p-values of 0.001, which is less than 0.05. As a result, we reject the null hypothesis and conclude that the distribution of 'CLIMATE.CATEGORY' where 'TOTAL.PRICE' is missing has a significant difference from the distribution where 'TOTAL.PRICE' is not missing. Therefore, we can say that the missing mechanism of 'TOTAL.PRICE' is MAR as it does depends on 'CLIMATE.CATEGORY'. 
 
-## Step 4: Hypothesis Testing
+## Hypothesis Testing
 We will be testing whether Duration is longer when it begins at night time. The columns that are use for testing are 'OUTAGE.DURATION' and 'DAY.OR.NIGHT'.
 
 - Null Hypothesis: The average duration when it begins during night is the same as the duration that begins during day time. 
@@ -204,13 +204,13 @@ We will be testing whether Duration is longer when it begins at night time. The 
 The above graph show the observed difference vs. the differences' empirical distribution. 
 After performing a permutation test with 10000 simulations assuming that the null hypothesis was correct, we got the p-value of 0.0. Obviously, 0.0 < 0.05, implying a statistical significance, so we reject the null hypothesis and conclude that the average duration when it begins during night time is longer than the duration that begins during day time.
 
-## Step 5: Framing a Prediction Problem
+## Framing a Prediction Problem
 
 We want to classified the level of outage duration into 'Momentary', 'Short-term', 'Extended', 'Extended', and 'Chronic', so it would be a clssification problem. 
 The metric we'll be using would be the acuracy because that's one the easist metric to be interpreted and we want the user to quickly understand our model's performance. 
 During the prediction, user would have information to the following values: 'NERC.REGION', 'CLIMATE.REGION', 'CAUSE.CATEGORY', 'CAUSE.CATEGORY.DETAIL', 'DEMAND.LOSS.MW', 'CUSTOMERS.AFFECTED', 'ANOMALY.LEVEL', 'HAS.HURRICANE'. These information would be the input of our classifying prediction. 
 
-## Step 6: Baseline Model
+## Baseline Model
 
 Our model is a DecisionTreeClassifier that uses two nominol features: 'NERC.REGION' and 'CLIMATE.REGION' to predict the duration level of a given outage. The information give by the model is useful for the govenment to determine whether this outage is serious or not.
 
@@ -218,7 +218,7 @@ Our model is a DecisionTreeClassifier that uses two nominol features: 'NERC.REGI
 
 The model's performance in terms of accuracy is around 0.35 when tested on the test set, which is not a good value and means that the model requires critical inprovement during the next step. To do so, we plan to change the classify model, add more features for training, and use grid search to tune the hyperparameters.
 
-## Step 7: Final Model
+## Final Model
 In our final model, we've decided to use a RandomForestClassifier to classify the duration level using the following features: 'NERC.REGION', 'CLIMATE.REGION', 'CAUSE.CATEGORY', 'CAUSE.CATEGORY.DETAIL', 'DEMAND.LOSS.MW', 'CUSTOMERS.AFFECTED', 'ANOMALY.LEVEL', 'HAS.HURRICANE'.  
 
 Base on our baseline model, we added 6 new features. 
@@ -237,7 +237,7 @@ The parameters are:
 
 Finally, our final model achieved the accuracy score of 0.54. Compare to the accuracy of 0.35 from the baseline model, our final model has a huge improvement on its accuracy, meaning that it's a way better model compare to the baseline model.
 
-## Step 8: Fairness Analysis
+## Fairness Analysis
 
 Our groups for the fairness analysis are whether the outage happened with hurricane or not. We choose to use hurricane becuase it has a strong correlation between outage duration and we want to make sure that out model is predicing correctly. We use recall as our metric because we want to make sure that the model predicted correctly everytime there is a hurricane.
 
