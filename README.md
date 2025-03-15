@@ -15,6 +15,7 @@ To start we will be looking at the following columns:
 ```  
   
 ## Column Dictionary
+
 | Variable Name          | Description |
 |------------------------|-------------|
 | **YEAR**               | Indicates the year when the outage event occurred |
@@ -62,7 +63,8 @@ These cleaning steps ensured that our dataset was free of missing values in crit
 
 ## Exploratory analysis
 ### Univariate Analysis
-population vs count
+population vs count: 
+The following shows the number of outages for each population range. We see that it's multimodal with concentration at 5M, 20M, and 35-40M. This hints that most outages occurs in areas with low population. This would make sense since smaller citites might not have the proper outage protection. 
 
 <iframe
   src="project04/asset/population-count.html"
@@ -71,7 +73,8 @@ population vs count
   frameborder="0"
 ></iframe>
 
-climate vs count
+climate vs count:
+The following shows the three catagory of climate and the number of occurance of outages. We see that most outages occurs in normal, with cold climate being second. This makes sense since most of US is catagorized as 'normal' climate, therefore will have more instances of outages. 
 
 <iframe
   src="project04/asset/climate-count.html"
@@ -80,12 +83,18 @@ climate vs count
   frameborder="0"
 ></iframe>
 
+Duration level vs count:
+The following chart shows the number of occurance of outages for each duration level. Note that the catagories are not in order of duration. We see that most outages are momentary and short termed. 
+
 <iframe
   src="project04/asset/duration-count.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+Year vs Outage Duration:
+The following chart shows that there is a general downward trend since 2002 to 2016 of outage duration, despite each year varying wildly. 
 
 <iframe
   src="project04/asset/year-duration.html"
@@ -96,12 +105,18 @@ climate vs count
 
 ### Bivariate Analysis
 
+Outage Duration vs Population:
+The following chart shows the distribution of population in comaparison to outage duration. Similar to the previous outage count chart, we see high concentration in three areas: namely 0-13M, 17-27M, and 35-40M range. 
+
 <iframe
   src="project04/asset/population-duration.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+Anomoly level vs climate category:
+The following chart comares the number of occurance of outages for each climate category and anomoly level
 
 <iframe
   src="project04/asset/level-count.html"
@@ -110,12 +125,18 @@ climate vs count
   frameborder="0"
 ></iframe>
 
+Heatmap
+The following chart compares climate categroy with cause category and the difference in number of occurances. We see severe weather has the most effect to outage, as well as intentional attacks. The others have not much effects. 
+
 <iframe
   src="project04/asset/cause-climate.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+State vs anomaly level
+The following chart shows the max anomaly level of each state. Note all states are not shown on bottom. Hover over bars to see more details. We see that Kansas and South Dakota are significantly higher than the rest. 
 
 <iframe
   src="project04/asset/state-level.html"
@@ -125,6 +146,7 @@ climate vs count
 ></iframe>
 
 ## Grouping and Aggregates
+
 | NERC.REGION   |   cold |   normal |   warm |
 |:--------------|-------:|---------:|-------:|
 | ECAR          |      2 |       22 |      8 |
@@ -142,29 +164,35 @@ climate vs count
 | WECC          |    134 |      186 |    104 |
 
 # Assessment of Missingness
+
 ## NMAR Analysis
+
 Among all columns with missing values, 'DEMAND.LOSS.MW' and 'CUSTOMERS.AFFECTED' has a high chance of being NMAR. Because these values could be missing due to the data collection method. As these values could bring direct and crucial negative effects to the power companies, they might not report the data to the institute collecting the data. 
 
 With addition information about the companies such as their name, their size, or their annual revenue, it is possible to determine whether the missing values are dependent on the companies or their performances and thus making them MAR. 
 
 ## Missingness Dependency
+
 We focus on the distribution of the column 'TOTAL.PRICE' and test it again the columns 'U.S._STATE' and 'CLIMATE.CATEGORY'.
 
 1. 'U.S._STATE' vs.'TOTAL.PRICE' 
 - Null Hypothesis: The distribution of 'U.S._STATE' is the same when 'TOTAL.PRICE' is missing vs not missing.
 - Alternate Hypothesis: The distribution of 'U.S._STATE' is not the same when 'TOTAL.PRICE' is missing vs not missing.
+
 <iframe
   src="project04/asset/prop-STATE.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
 <iframe
   src="project04/asset/tvd-prob.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
 The observed TVD is around 0.4099 with the p-values of 0.256, which is higher than 0.05. As a result, we fail to reject the null hypothesis and conclude that the distribution of 'U.S._STATE' where 'TOTAL.PRICE' is missing has no significant difference from the distribution where 'TOTAL.PRICE' is not missing. Therefore, we can so far conclued that the missness of 'TOTAL.PRICE' does not depend on 'U.S._STATE'. 
 
 2. 'CLIMATE.CATEGORY' vs. 'TOTAL.PRICE'
@@ -176,6 +204,7 @@ The observed TVD is around 0.4099 with the p-values of 0.256, which is higher th
   height="600"
   frameborder="0"
 ></iframe>
+
 <iframe
   src="project04/asset/tvd-prob2.html"
   width="800"
