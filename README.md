@@ -6,8 +6,9 @@
 Site: https://tzheng846.github.io/Power_Outage_Analysis/
 
 ## Introduction
-We aim to answer: **What are the characteristics of different levels of outage duration?**  
-Almost everyone in the US has experianced some sort of power outages. It ranges from mildly inconvient of 2 minute all the way to devestating month long issue. We want to learn more about what makes these outages different and what factor influence their duration the most. This dataset represents the cumulative data of most major recorded outages in the US. We hope to find our answers hidden in this rich source of information.  
+We aim to answer: **What are the characteristics of different levels of outage duration?**   
+
+Almost everyone in the US has experianced some sort of power outages. It ranges from mildly inconvient of 2 minute all the way to devestating month long issue. We want to learn more about what makes these outages different and what factor influence their duration the most. In this project, we delve into a comprehensive dataset documenting major power outages across the continental United States. This dataset represents the cumulative data of most major recorded outages in the US. We hope to find our answers hidden in this rich source of information. Our goal is to uncover patterns and characteristics that differentiate short-term outages from prolonged ones. By analyzing variables such as climate conditions, population density, outage causes, and others we aim to answer the question: What are the key factors that influence the duration of power outages?  
 
 To start we will be looking at the following columns:
 ```python 
